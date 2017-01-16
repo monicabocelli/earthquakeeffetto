@@ -1,6 +1,6 @@
 var dots = [];
 
-var value = 30;  //starting value of earthquake
+var value = 50;  //starting value of earthquake
 
 //var img;
     
@@ -9,7 +9,7 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
     
     //create objects
-    for (var i = 0; i < value*6; i++){
+    for (var i = 0; i < value*10; i++){
         dots.push(new QuakeDots());
     }
     
@@ -20,17 +20,17 @@ function draw(){
     background(204);
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
-    textSize(5);
+    textSize(16);
     text('SEE RESULTS', width/2, height/1.1);
     
     
    //MAGNITUDE TEXT 
     //textFont('Inconsolata');
-    textSize(5);
+    textSize(8);
     textAlign(CENTER);
     textStyle(NORMAL);
     text("Magnitude", width - width/6, height/3.5);
-    textSize(5);
+    textSize(12);
     textAlign(CENTER);
     textStyle(BOLD);
     text(value, width - width/6, height/3);
@@ -49,7 +49,7 @@ function draw(){
     //draw dots and given methods (actions)
     noStroke();
     fill(0);
-    for (var i = 0; i < value*6; i++){
+    for (var i = 0; i < value*10; i++){
         dots[i].move();
         dots[i]. display();
     }
@@ -72,7 +72,7 @@ function QuakeDots(){
     
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
-    this.diameter = 2;
+    this.diameter = 3;
     this.speed = 1.5; //magnitude
 
 
