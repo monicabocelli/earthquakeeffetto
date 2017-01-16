@@ -20,17 +20,17 @@ function draw(){
     background(204);
     
  // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
-    textSize(32);
+    textSize(height/20);
     text('SEE RESULTS', width/2, height/1.1);
     
     
    //MAGNITUDE TEXT 
     //textFont('Inconsolata');
-    textSize(20);
+    textSize(height/25);
     textAlign(CENTER);
     textStyle(NORMAL);
     text("Magnitude", width - width/6, height/3.5);
-    textSize(24);
+    textSize(height/28);
     textAlign(CENTER);
     textStyle(BOLD);
     text(value, width - width/6, height/3.3);
