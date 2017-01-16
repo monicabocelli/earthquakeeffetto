@@ -1,39 +1,41 @@
 var dots = [];
 
-var value = 150;  //starting value of earthquake
+var value = 30;  
 
-//var img;
+
     
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-    
+  
     //create objects
-    for (var i = 0; i < value*10; i++){
+    for (var i = 0; i < value*18; i++){
         dots.push(new QuakeDots());
     }
     
-   // image(img, 0, 0);
+   
 }
 
 function draw(){
     background(204);
-    
- // touches[random(width/1.9,width/2.1),random(height/1, height/1.2)];
-    textSize(height/20);
-    text('SEE RESULTS', width/2, height/1.1);
+    angleMode(DEGREES);
+ 
+    textSize(height/30);
+    text('SEE RESULTS', width/2, height - height/12);
     
     
    //MAGNITUDE TEXT 
-    
-    textSize(height/25);
+    //textFont('Inconsolata');
+    textSize(height/40);
     textAlign(CENTER);
     textStyle(NORMAL);
-    text("Magnitude", width - width/7, height/3.5);
-    textSize(height/18);
+    //text("Magnitude", width - width/9, height/3.5);
+    text("Magnitude", width/2, height - height/5);
+    textSize(height/20);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(value, width - width/7, height/3.3);
+    //text(value, width - width/9, height/3);
+    text(value,width/2, height - height/6.7);
     
     
     //CREATE THE ELLIPSE AREA
@@ -43,54 +45,55 @@ function draw(){
     
     noFill();
     stroke(0);
-    strokeWeight(1);
+    strokeWeight(0.3);
     ellipse (x, y, r, r);
     
     //draw dots and given methods (actions)
     noStroke();
     fill(0);
-    for (var i = 0; i < value*10; i++){
+    for (var i = 0; i < value*18; i++){
         dots[i].move();
         dots[i]. display();
+  
     }
     
-}
-
-/*
-function deviceShaken(){
-        
-    value = (accelerationX * accelerationY * accelerationZ)/3;
-    magnitude = map(value, 30, 1000, 0, 10);
     
-    text(magnitude, width - width/6, height/2); //COME SOPRA IN DRAW()
 }
-*/
 
 function QuakeDots(){
     
-    var d = dist(width/2,height/2,width/2+value,height/2);
+    
+    var a = random(0,360);
+    var b = random(0,value);//r = value = 30
+    var x = sin(a) * b; // mi dà un numero che va da -b a b
+    var y = cos(a) * b; // mi dà un numero che va da -b a b
+    var d = dist(width/2,height/2, width/2, height/2 + x/2);
+    
+    //var d = dist(width/2,height/2,width/2+value,height/2);
     
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
-    this.diameter = 3;
-    this.speed = 1.5; //magnitude
+    this.diameter = 1;
+    this.speed = 0.5; //according to magnitude
+    
+    
+    
+    
+    
 
 
 this.move = function(){
     this.xdot += random(-this.speed,this.speed);
     this.ydot += random(-this.speed,this.speed);
+ 
 }
 
 this.display = function(){
+    if(this.xdot > width/2 + d || this.xdot < width/2 - d || this.ydot > height/2 + d || this.ydot < height/2 - d){
+       this.xdot = random(width/2 - d, width/2 + d);
+       this.ydot = random(height/2 - d, height/2 + d); 
+       }
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
 };
 
-    
-/*    
-function touchStarted(){
-    img = loadImage('images/prova2.jpg');
-}
- 
-*/
-    
 }
