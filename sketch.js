@@ -25,15 +25,15 @@ function draw(){
     
     
    //MAGNITUDE TEXT 
-    //textFont('Inconsolata');
+    
     textSize(height/25);
     textAlign(CENTER);
     textStyle(NORMAL);
-    text("Magnitude", width - width/6, height/3.5);
-    textSize(height/28);
+    text("Magnitude", width - width/7, height/3.5);
+    textSize(height/18);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(value, width - width/6, height/3.3);
+    text(value, width - width/7, height/3.3);
     
     
     //CREATE THE ELLIPSE AREA
