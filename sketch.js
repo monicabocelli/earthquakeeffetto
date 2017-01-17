@@ -7,7 +7,7 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
   
     //create objects
-    for (var i = 0; i < value*18; i++){
+    for (var i = 0; i < value*10; i++){
         dots.push(new QuakeDots());
     }
     
@@ -38,7 +38,7 @@ function draw(){
     //CREATE THE ELLIPSE AREA
     var x = width/2;
     var y = height/2;
-    var r = value*1.2; 
+    var r = value * 1.5; 
     
     noFill();
     stroke(0);
@@ -48,7 +48,7 @@ function draw(){
     //draw dots and given methods (actions)
     noStroke();
     fill(0);
-    for (var i = 0; i < value*18; i++){
+    for (var i = 0; i < value*10; i++){
         dots[i].move();
         dots[i]. display();
   
@@ -71,7 +71,7 @@ function QuakeDots(){
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
     this.diameter = 3;
-    this.speed = 1; //according to magnitude
+    this.speed = 2; //according to magnitude
     
     
 
