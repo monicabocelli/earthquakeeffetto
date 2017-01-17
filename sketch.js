@@ -1,9 +1,7 @@
 var dots = [];
 
-var value = 30;  
-
-
-    
+var value = 200;  
+ 
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -25,27 +23,26 @@ function draw(){
     
     
    //MAGNITUDE TEXT 
-    //textFont('Inconsolata');
+    
     textSize(height/40);
     textAlign(CENTER);
     textStyle(NORMAL);
-    //text("Magnitude", width - width/9, height/3.5);
     text("Magnitude", width/2, height - height/5);
+    
     textSize(height/20);
     textAlign(CENTER);
     textStyle(BOLD);
-    //text(value, width - width/9, height/3);
     text(value,width/2, height - height/6.7);
     
     
     //CREATE THE ELLIPSE AREA
     var x = width/2;
     var y = height/2;
-    var r = value*2; 
+    var r = value; 
     
     noFill();
     stroke(0);
-    strokeWeight(0.3);
+    strokeWeight(0.5);
     ellipse (x, y, r, r);
     
     //draw dots and given methods (actions)
@@ -73,14 +70,10 @@ function QuakeDots(){
     
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
-    this.diameter = 1;
-    this.speed = 0.5; //according to magnitude
+    this.diameter = 3;
+    this.speed = 1; //according to magnitude
     
     
-    
-    
-    
-
 
 this.move = function(){
     this.xdot += random(-this.speed,this.speed);
