@@ -2,15 +2,13 @@ var dots = [];
 
 var value = 200;  
  
-
 function setup(){
     createCanvas(windowWidth, windowHeight);
   
     //create objects
     for (var i = 0; i < value*10; i++){
         dots.push(new QuakeDots());
-    }
-    
+    }   
    
 }
 
@@ -32,8 +30,7 @@ function draw(){
     textSize(height/20);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(value,width/2, height - height/6.7);
-    
+    text(value,width/2, height - height/6.7);  
     
     //CREATE THE ELLIPSE AREA
     var x = width/2;
@@ -52,8 +49,7 @@ function draw(){
         dots[i].move();
         dots[i]. display();
   
-    }
-    
+    }  
     
 }
 
@@ -72,8 +68,7 @@ function QuakeDots(){
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
     this.diameter = 3;
     this.speed = 2; //according to magnitude
-    
-    
+        
 
 this.move = function(){
     this.xdot += random(-this.speed,this.speed);
@@ -88,5 +83,5 @@ this.display = function(){
        }
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
 };
-
+ 
 }
