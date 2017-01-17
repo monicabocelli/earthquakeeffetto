@@ -38,7 +38,7 @@ function draw(){
     //CREATE THE ELLIPSE AREA
     var x = width/2;
     var y = height/2;
-    var r = value; 
+    var r = value*1.2; 
     
     noFill();
     stroke(0);
