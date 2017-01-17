@@ -1,6 +1,6 @@
 var dots = [];
 
-var value = 200;  
+var value = 400;  
  
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -35,7 +35,7 @@ function draw(){
     //CREATE THE ELLIPSE AREA
     var x = width/2;
     var y = height/2;
-    var r = value * 2; 
+    var r = value; 
     
     noFill();
     stroke(0);
@@ -66,7 +66,7 @@ function QuakeDots(){
     
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
-    this.diameter = 3;
+    this.diameter = 4;
     this.speed = 2; //according to magnitude
         
 
